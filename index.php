@@ -35,7 +35,7 @@ if (isset($_GET['AddToCart'])) {
 
 <body>
     <header>
-        <h1>Welcome to AZ Store</h1>
+        
     </header>
     <main>
         <div class="displayCar">
@@ -51,10 +51,9 @@ if (isset($_GET['AddToCart'])) {
                         if ($key == "Prix") {
                             echo "<span>$key : $item €</span>";
                         } elseif ($key == "img") {
-                        } else echo "<p>$key : $item</p>";
+                        } else echo "<span>$key : $item</span>";
                     }     ?>
 
-                    <button>Add To cart</button>
 
                         <button class="add_to_cart">Add To cart 
                         <i class="fa-solid fa-cart-arrow-down fa-s"></i>

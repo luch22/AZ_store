@@ -5,42 +5,42 @@
 			"Marque": "Porsche",
 			"Modele": "Carrera GT",
 			"Prix": 350000,
-			"img": "assets//assets/img/Carrera_GT.jpg"
+			"img": "assets/img/Carrera_GT.jpg"
 		},
 		{
 			"id": 2,
 			"Marque": "Ferrari",
 			"Modele": "F8 Tributo",
 			"Prix": 240000,
-			"img": "/assets/img/Ferrari_F8.png"
+			"img": "assets/img/Ferrari_F8.png"
 		},
 		{
 			"id": 3,
 			"Marque": "Mercedes Benz",
 			"Modele": "Classe S 500",
 			"Prix": 150000,
-			"img": "assets//assets/img/Classe_S.jpg"
+			"img": "assets/img/Classe_S.jpg"
 		},
 		{
 			"id": 4,
 			"Marque": "Chevrolet",
 			"Modele": "Corvette Z06",
 			"Prix": 85000,
-			"img": "assets//assets/img/Corvette_Z06.jpg"
+			"img": "assets/img/Corvette_Z06.jpg"
 		},
 		{
 			"id": 5,
 			"Marque": "Alpine",
 			"Modele": "A110",
 			"Prix": 62000,
-			"img": "assets//assets/img/Alpine_A110.jpg"
+			"img": "assets/img/Alpine_A110.jpg"
 		},
 		{
 			"id": 6,
 			"Marque": "BMW",
 			"Modele": "M4 Competition",
 			"Prix": 125000,
-			"img": "assets//assets/img/M4_Competition.jpg"
+			"img": "assets/img/M4_Competition.jpg"
 		}
 	]
 }

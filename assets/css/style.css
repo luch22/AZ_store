@@ -1,15 +1,20 @@
 body {
-  background-color: whitesmoke;
+  background-color: lightgray;
   font-family: "Poppins", sans-serif;
 }
-
-header {
+body header {
   text-align: center;
-  height: 60px;
+  height: 100px;
+  background-image: url("../img/az-cars-low-logo.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 10px 0 10px 0;
 }
-header h1 {
+body header h1 {
   color: black;
   font-size: 30px;
+  text-shadow: 3px 3px 3px lightgray;
 }
 
 .displayCar {
@@ -47,4 +52,15 @@ header h1 {
   transform: translateX(1em);
   transition: all 1s;
   border: 1px solid black;
+}
+
+.button {
+  transition: all 1s;
+  border-radius: 8px;
+  border: 1px solid lightgrey;
+  text-transform: capitalize;
+  cursor: pointer;
+  padding: 6px;
+  width: 120px;
+  margin: 0 5px 0 5px;
 }/*# sourceMappingURL=style.css.map */

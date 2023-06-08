@@ -3,6 +3,9 @@
 $json = file_get_contents('items.json');
 $jsonData = json_decode($json, true);
 $jsonCart = file_get_contents('cart.json');
+if (is_string($jsonCart) and strlen($jsonCart) == 0) {
+    $jsonCart = "[]";
+}
 $cartList = json_decode($jsonCart, true);
 function addItemsToCart($itemAdd)
 {
@@ -10,10 +13,11 @@ function addItemsToCart($itemAdd)
     array_push($cartList, $itemAdd);
     file_put_contents("cart.json", json_encode($cartList));
 }
-if (isset($_GET['AddToCart'])) {
-    $itemValue = $_GET['data'];
+if (isset($_POST['AddToCart'])) {
+    $itemValue = $_POST['data'];
 
     addItemsToCart($itemValue);
+    header("Location: " . $_SERVER['PHP_SELF']);
 }
 
 
@@ -35,7 +39,7 @@ if (isset($_GET['AddToCart'])) {
 
 <body>
     <header>
-        <h1>Welcome to AZ Store</h1>
+        <h1>Welcome to AZ Cars</h1>
     </header>
     <main>
         <div class="displayCar">
@@ -44,21 +48,22 @@ if (isset($_GET['AddToCart'])) {
             ?>
 
                 <div class="cars" style="background-image: url(<?php echo $value["img"] ?>);">
-                    <!-- <p> Voici votre voiture de marque: <?php echo $value["Marque"] ?></p> -->
-
 
                     <?php foreach ($value as $key => $item) {
                         if ($key == "Prix") {
                             echo "<span>$key : $item €</span>";
                         } elseif ($key == "img") {
-                        } else echo "<p>$key : $item</p>";
-                    }     ?>
+                        } else echo "<span>$key : $item</span>";
+                    } ?>
 
-                    <button>Add To cart</button>
+                    <form action="?" method="post">
+                        <input type="hidden" name="data" value="<?php print_r($value["id"]) ?>">
+                        <label for="<?php print_r($value["id"]) ?>" class="add_to_cart">
+                            <input type="submit" class="disableButton" id="<?php print_r($value["id"])   ?>" name="AddToCart" value="Ajouter au panier">
+                            <i class=' fa-solid fa-cart-arrow-down fa-s'></i>
+                        </label>
+                    </form>
 
-                        <button class="add_to_cart">Add To cart 
-                        <i class="fa-solid fa-cart-arrow-down fa-s"></i>
-                        </button>
                 </div>
 
 
@@ -72,17 +77,18 @@ if (isset($_GET['AddToCart'])) {
 
     </main>
     <footer>
-        <form action="" method="get">
+        <form action="?" method="post">
             <input type="submit" class="button" name="DisplayCart" value="afficher au panier">
         </form>
 
 
         <?php
-        if (isset($_GET['DisplayCart'])) {
+        if (isset($_POST['DisplayCart'])) {
 
             // if ($cart != null) {
             //     printf("Salut");
             // }
+
         }
 
 

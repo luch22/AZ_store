@@ -17,8 +17,8 @@ header h1 {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1px;
 }
-
-.cars {
+.displayCar .cars {
+  position: relative;
   background-position: center;
   background-size: cover;
   height: 250px;
@@ -29,22 +29,29 @@ header h1 {
   color: antiquewhite;
   text-shadow: 2px 1px 1px black;
 }
-.cars span:first-child {
+.displayCar .cars span:first-child {
   display: none;
 }
-
-.add_to_cart {
+.displayCar .cars .add_to_cart {
+  position: absolute;
+  top: 0;
+  right: 0;
   text-transform: capitalize;
-  padding: 6px;
-  width: 120px;
-  margin: 0 5px 0 5px;
+  width: 150px;
+  padding: 10px;
   border-radius: 8px;
+  background-color: white;
   border: 1px solid lightgrey;
   cursor: pointer;
+  scale: 0.8;
 }
-.add_to_cart:hover {
-  background-color: #15B097;
-  transform: translateX(1em);
-  transition: all 1s;
+.displayCar .cars .add_to_cart:hover {
+  background-color: #15b097;
+  scale: 1;
+  transition: all 0.5s;
   border: 1px solid black;
+}
+.displayCar .cars .add_to_cart .disableButton {
+  background-color: transparent;
+  border: none;
 }/*# sourceMappingURL=style.css.map */

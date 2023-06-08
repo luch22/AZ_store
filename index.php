@@ -39,7 +39,7 @@ if (isset($_POST['AddToCart'])) {
 
 <body>
     <header>
-        
+
     </header>
     <main>
         <div class="displayCar">
@@ -78,7 +78,7 @@ if (isset($_POST['AddToCart'])) {
     </main>
     <footer>
         <form action="?" method="post">
-            <input type="submit" class="button" name="DisplayCart" value="afficher au panier">
+            <input type="submit" class="button" name="DisplayCart" value="afficher du panier">
         </form>
 
 

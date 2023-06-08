@@ -2,21 +2,21 @@ body {
 	background-color: lightgray;
 	font-family: "Poppins", sans-serif;
 
-    header {
-    	text-align: center;
-    	height: 100px;
-        background-image: url('../img/az-cars-low-logo.png');
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        margin: 10px 0 10px 0;
+	header {
+		text-align: center;
+		height: 100px;
+		background-image: url("../img/az-cars-low-logo.png");
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+		margin: 10px 0 10px 0;
 
-        h1 {
-            color: black;
-            font-size: 30px;
-            text-shadow: 3px 3px 3px lightgray;
-        }
-    }
+		h1 {
+			color: black;
+			font-size: 30px;
+			text-shadow: 3px 3px 3px lightgray;
+		}
+	}
 }
 
 .displayCar {
@@ -65,49 +65,30 @@ body {
 		}
 	}
 }
-
-.cars {
-    background-position: center;
-    background-size: cover;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-content: flex-end;
-    color: antiquewhite;
-    text-shadow: 2px 1px 1px black;
-
-    & span:first-child {
-        display: none;
-    }
-
-}
-
 .add_to_cart {
-    text-transform: capitalize;
-    padding: 6px;
-    width: 120px;
-    margin: 0 5px 0 5px;
-    border-radius: 8px;
-    border: 1px solid lightgrey;
-    cursor: pointer;
+	text-transform: capitalize;
+	padding: 6px;
+	width: 120px;
+	margin: 0 5px 0 5px;
+	border-radius: 8px;
+	border: 1px solid lightgrey;
+	cursor: pointer;
 
-    &:hover {
-        background-color: #15B097;
-        transform: translateX(1em);
-        transition: all 1s;
-        border: 1px solid black;
-    }
-
+	&:hover {
+		background-color: #15b097;
+		transform: translateX(1em);
+		transition: all 1s;
+		border: 1px solid black;
+	}
 }
 
 .button {
-    transition: all 1s;
-    border-radius: 8px;
-    border: 1px solid lightgrey;
-    text-transform: capitalize;
-    cursor: pointer;
-    padding: 6px;
-    width: 120px;
-    margin: 0 5px 0 5px;
+	transition: all 1s;
+	border-radius: 8px;
+	border: 1px solid lightgrey;
+	text-transform: capitalize;
+	cursor: pointer;
+	padding: 6px;
+	width: 120px;
+	margin: 0 5px 0 5px;
 }

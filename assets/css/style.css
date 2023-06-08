@@ -61,21 +61,6 @@ body header h1 {
   border: none;
 }
 
-.cars {
-  background-position: center;
-  background-size: cover;
-  height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-content: flex-end;
-  color: antiquewhite;
-  text-shadow: 2px 1px 1px black;
-}
-.cars span:first-child {
-  display: none;
-}
-
 .add_to_cart {
   text-transform: capitalize;
   padding: 6px;
@@ -86,7 +71,7 @@ body header h1 {
   cursor: pointer;
 }
 .add_to_cart:hover {
-  background-color: #15B097;
+  background-color: #15b097;
   transform: translateX(1em);
   transition: all 1s;
   border: 1px solid black;

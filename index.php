@@ -11,30 +11,20 @@ $jsonData = json_decode($json, true);
 <html lang="en">
 
 <head>
-    <style>
-        body {
-            color: white;
-        }
-
-        .displayCar {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        .cars {
-            background-position: center;
-            background-size: cover;
-        }
-    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/18f626dcdf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <title>AZ_store</title>
 </head>
 
 <body>
     <header>
-
+        <h1>Welcome to AZ Store</h1>
     </header>
     <main>
         <div class="displayCar">
@@ -43,19 +33,21 @@ $jsonData = json_decode($json, true);
             ?>
 
                 <div class="cars" style="background-image: url(<?php echo $value["img"] ?>);">
-                    <p> voici votre voiture de Marque: <?php echo $value["Marque"] ?></p>
+                    <!-- <p> Voici votre voiture de marque: <?php echo $value["Marque"] ?></p> -->
 
 
                     <?php foreach ($value as $key => $item) {
                         if ($key == "Prix") {
-                            echo "<p>$key : $item €</p>";
+                            echo "<span>$key : $item €</span>";
                         } elseif ($key == "img") {
-                        } else echo "<p>$key : $item</p>";
-                    }     ?>
+                        } else echo "<span>$key : $item</span>";
+                    }     
+                    
+                    ?>
 
-                    <button>Add To cart</button>
-
-
+                        <button class="add_to_cart">Add To cart 
+                        <i class="fa-solid fa-cart-arrow-down fa-s"></i>
+                        </button>
                 </div>
 
 

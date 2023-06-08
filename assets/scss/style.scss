@@ -1,0 +1,57 @@
+body {
+    background-color: whitesmoke;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    text-align: center;
+    height: 60px;
+
+    h1 {
+        color: black;
+        font-size: 30px;
+    }
+}
+
+
+.displayCar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1px;
+}
+
+.cars {
+    background-position: center;
+    background-size: cover;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: flex-end;
+    color: antiquewhite;
+    text-shadow: 2px 1px 1px black;
+
+    & span:first-child {
+        display: none;
+    }
+
+}
+
+
+.add_to_cart {
+    text-transform: capitalize;
+    padding: 6px;
+    width: 120px;
+    margin: 0 5px 0 5px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #15B097;
+        transform: translateX(1em);
+        transition: all 1s;
+        border: 1px solid black;
+    }
+
+}

@@ -12,6 +12,10 @@ $jsonData = json_decode($json, true);
 
 <head>
     <style>
+        body {
+            color: white;
+        }
+
         .displayCar {
             display: grid;
             grid-template-columns: repeat(3, 1fr);

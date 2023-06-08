@@ -2,8 +2,19 @@
 
 $json = file_get_contents('items.json');
 $jsonData = json_decode($json, true);
+$jsonCart = file_get_contents('cart.json');
+$cartList = json_decode($jsonCart, true);
+function addItemsToCart($itemAdd)
+{
+    global $cartList;
+    array_push($cartList, $itemAdd);
+    file_put_contents("cart.json", json_encode($cartList));
+}
+if (isset($_GET['AddToCart'])) {
+    $itemValue = $_GET['data'];
 
-
+    addItemsToCart($itemValue);
+}
 
 
 ?>
@@ -40,10 +51,10 @@ $jsonData = json_decode($json, true);
                         if ($key == "Prix") {
                             echo "<span>$key : $item €</span>";
                         } elseif ($key == "img") {
-                        } else echo "<span>$key : $item</span>";
-                    }     
-                    
-                    ?>
+                        } else echo "<p>$key : $item</p>";
+                    }     ?>
+
+                    <button>Add To cart</button>
 
                         <button class="add_to_cart">Add To cart 
                         <i class="fa-solid fa-cart-arrow-down fa-s"></i>
@@ -61,6 +72,22 @@ $jsonData = json_decode($json, true);
 
     </main>
     <footer>
+        <form action="" method="get">
+            <input type="submit" class="button" name="DisplayCart" value="afficher au panier">
+        </form>
+
+
+        <?php
+        if (isset($_GET['DisplayCart'])) {
+
+            // if ($cart != null) {
+            //     printf("Salut");
+            // }
+        }
+
+
+
+        ?>
 
     </footer>
 

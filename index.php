@@ -56,7 +56,7 @@ if (isset($_POST['AddToCart'])) {
                         } else echo "<span>$key : $item</span>";
                     } ?>
 
-                    <form action="?" method="post">
+                    <form action="" method="post">
                         <input type="hidden" name="data" value="<?php print_r($value["id"]) ?>">
                         <label for="<?php print_r($value["id"]) ?>" class="add_to_cart">
                             <input type="submit" class="disableButton" id="<?php print_r($value["id"])   ?>" name="AddToCart" value="Ajouter au panier">
@@ -77,23 +77,12 @@ if (isset($_POST['AddToCart'])) {
 
     </main>
     <footer>
-        <form action="?" method="post">
-            <input type="submit" class="button" name="DisplayCart" value="afficher du panier">
+        <form action="cart.php" method="get">
+            <input type="submit" class="button" name="DisplayCart" value="Panier">
         </form>
 
 
-        <?php
-        if (isset($_POST['DisplayCart'])) {
 
-            // if ($cart != null) {
-            //     printf("Salut");
-            // }
-
-        }
-
-
-
-        ?>
 
     </footer>
 

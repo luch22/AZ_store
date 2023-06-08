@@ -2,8 +2,19 @@
 
 $json = file_get_contents('items.json');
 $jsonData = json_decode($json, true);
+$jsonCart = file_get_contents('cart.json');
+$cartList = json_decode($jsonCart, true);
+function addItemsToCart($itemAdd)
+{
+    global $cartList;
+    array_push($cartList, $itemAdd);
+    file_put_contents("cart.json", json_encode($cartList));
+}
+if (isset($_GET['AddToCart'])) {
+    $itemValue = $_GET['data'];
 
-
+    addItemsToCart($itemValue);
+}
 
 
 ?>
@@ -11,21 +22,6 @@ $jsonData = json_decode($json, true);
 <html lang="en">
 
 <head>
-    <style>
-        body {
-            color: white;
-        }
-
-        .displayCar {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        .cars {
-            background-position: center;
-            background-size: cover;
-        }
-    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,9 +47,13 @@ $jsonData = json_decode($json, true);
                             echo "<p>$key : $item €</p>";
                         } elseif ($key == "img") {
                         } else echo "<p>$key : $item</p>";
-                    }     ?>
+                    }
+                    ?>
 
-                    <button>Add To cart</button>
+                    <form action="" method="get">
+                        <input type="hidden" name="data" value="<?php print_r($value["id"]) ?>">
+                        <input type="submit" class="button" name="AddToCart" value="Ajouter au panier">
+                    </form>
 
 
                 </div>
@@ -69,6 +69,22 @@ $jsonData = json_decode($json, true);
 
     </main>
     <footer>
+        <form action="" method="get">
+            <input type="submit" class="button" name="DisplayCart" value="afficher au panier">
+        </form>
+
+
+        <?php
+        if (isset($_GET['DisplayCart'])) {
+
+            // if ($cart != null) {
+            //     printf("Salut");
+            // }
+        }
+
+
+
+        ?>
 
     </footer>
 

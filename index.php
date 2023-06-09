@@ -10,7 +10,7 @@ $cartList = json_decode($jsonCart, true);
 function addItemsToCart($itemAdd)
 {
     global $cartList;
-    array_push($cartList, $itemAdd);
+    array_push($cartList, (int)$itemAdd);
     file_put_contents("cart.json", json_encode($cartList));
 }
 if (isset($_POST['AddToCart'])) {
@@ -77,9 +77,17 @@ if (isset($_POST['AddToCart'])) {
 
     </main>
     <footer>
-        <form action="cart.php" method="get">
-            <input type="submit" class="button" name="DisplayCart" value="Panier">
-        </form>
+        <?php
+
+        if (count($cartList) > 0) {
+        ?>
+            <form action="cart.php" method="get" class="cart">
+                <input type="submit" class="button" name="DisplayCart" value="Panier">
+            </form>
+
+        <?php
+        } ?>
+
 
 
 

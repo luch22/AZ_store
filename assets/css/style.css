@@ -39,8 +39,7 @@ body header {
   position: absolute;
   top: 0;
   right: 0;
-  text-transform: capitalize;
-  width: 150px;
+  width: 140px;
   padding: 6px;
   border-radius: 8px;
   background-color: lightgray;
@@ -51,6 +50,7 @@ body header {
   background-color: #15b097;
   transition: all 0.5s;
   border: 1px solid black;
+  transform: translateX(-1em);
 }
 .displayCar .cars .add_to_cart .disableButton {
   background-color: transparent;
@@ -58,39 +58,21 @@ body header {
   cursor: pointer;
 }
 
-.add_to_cart {
-  text-transform: capitalize;
-  padding: 6px;
-  width: 120px;
-  margin: 0 5px 0 5px;
-  border-radius: 8px;
-  border: 1px solid lightgrey;
-  cursor: pointer;
-}
-.add_to_cart:hover {
-  background-color: #15B097;
-  transform: translateX(-1em);
-  transition: all 1s;
-  border: 1px solid black;
-}
-
-.button {
-  margin-top: 10px;
-  transition: all 1s;
-  border-radius: 8px;
-  border: 1px solid lightgrey;
-  text-transform: capitalize;
-  cursor: pointer;
-  padding: 6px;
-  width: 120px;
-  margin: 0 5px 0 5px;
-}
-
 footer {
   text-align: center;
 }
 footer .button {
   margin-top: 10px;
+  transition: all 1s;
+  border-radius: 8px;
+  border: 1px solid grey;
+  cursor: pointer;
+  padding: 6px;
+  width: 150px;
+  height: 40px;
+}
+footer hr {
+  color: grey;
 }
 
 .social_media {
@@ -101,4 +83,5 @@ footer .button {
 }
 .social_media i {
   cursor: pointer;
+  scale: 1.4;
 }/*# sourceMappingURL=style.css.map */

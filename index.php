@@ -78,9 +78,9 @@ if (isset($_POST['AddToCart'])) {
     </main>
     <footer>
         <form action="?" method="post">
-            <input type="submit" class="button" name="DisplayCart" value="afficher au panier">
+            <input type="submit" class="button" name="DisplayCart" value="Afficher le panier">
         </form>
-
+        <hr>
 
         <?php
         if (isset($_POST['DisplayCart'])) {
@@ -102,6 +102,7 @@ if (isset($_POST['AddToCart'])) {
             <i class="fa-brands fa-twitter" id="twitter"></i>
             <i class="fa-brands fa-instagram" id="instagram"></i>
         </div>
+        
     </footer>
 
 

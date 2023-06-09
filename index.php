@@ -95,6 +95,13 @@ if (isset($_POST['AddToCart'])) {
 
         ?>
 
+    
+        <p>Rejoignez-nous sur les réseaux sociaux</p>
+        <div class="social_media">
+            <i class="fa-brands fa-facebook" id="facebook"></i>
+            <i class="fa-brands fa-twitter" id="twitter"></i>
+            <i class="fa-brands fa-instagram" id="instagram"></i>
+        </div>
     </footer>
 
 

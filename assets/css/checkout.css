@@ -1,0 +1,10 @@
+form {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+form input {
+  margin: auto;
+  width: 66%;
+}/*# sourceMappingURL=checkout.css.map */

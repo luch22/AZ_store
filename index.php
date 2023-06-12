@@ -6,6 +6,11 @@ $jsonCart = file_get_contents('cart.json');
 if (is_string($jsonCart) and strlen($jsonCart) == 0) {
     $jsonCart = "[]";
 }
+if (isset($_GET['deleteCart'])) {
+    $cartList = [];
+    file_put_contents("cart.json", json_encode($cartList));
+    header("Location: " . $_SERVER['PHP_SELF']);
+}
 $cartList = json_decode($jsonCart, true);
 function addItemsToCart($itemAdd)
 {
@@ -30,11 +35,11 @@ if (isset($_POST['AddToCart'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/18f626dcdf.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <title>AZ_store</title>
+    <title>AZ_CARS</title>
 </head>
 
 <body>
@@ -92,14 +97,14 @@ if (isset($_POST['AddToCart'])) {
 
 
 
-    
+
         <p>Rejoignez-nous sur les réseaux sociaux</p>
         <div class="social_media">
             <i class="fa-brands fa-facebook" id="facebook"></i>
             <i class="fa-brands fa-twitter" id="twitter"></i>
             <i class="fa-brands fa-instagram" id="instagram"></i>
         </div>
-        
+
     </footer>
 
 

@@ -4,12 +4,34 @@ body {
 }
 body header {
   text-align: center;
-  height: 100px;
+  height: 150px;
   background-image: url("../img/az-cars-low-logo.png");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   margin: 10px 0 10px 0;
+  transition: all 1s;
+}
+body header .returnHome {
+  height: 100%;
+  width: 100vw;
+  cursor: pointer;
+}
+body header .returnHome #vroom {
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+  right: -3000px;
+  font-size: 50pt;
+}
+body header:hover {
+  background-position: -2000px;
+  transition: all 3s;
+}
+body header:hover #vroom {
+  left: 0px;
+  transition-delay: 1.5s;
+  transition-property: left;
 }
 
 .displayCar {
@@ -29,6 +51,38 @@ body header {
   color: antiquewhite;
   text-shadow: 2px 1px 1px black;
 }
+.displayCar .cars form label.cart {
+  filter: drop-shadow(0 0 2px rgb(255, 255, 255));
+  color: rgb(0, 0, 0);
+  margin: 5px;
+  padding: 0 5px;
+  text-shadow: none;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  scale: 2;
+  cursor: pointer;
+  animation-play-state: paused;
+}
+.displayCar .cars form label.cart:hover {
+  -webkit-backdrop-filter: blur(0.4px);
+          backdrop-filter: blur(0.4px);
+  z-index: 10;
+  transform: scale(1.33);
+  animation: pulse 4s infinite;
+}
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(0.5);
+    animation-timing-function: ease-in;
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+.displayCar .cars form label.cart .disableButton {
+  display: none;
+}
 .displayCar .cars span:first-child {
   display: none;
 }
@@ -44,17 +98,6 @@ body header {
   border-radius: 8px;
   background-color: lightgray;
   border: 1px solid black;
-  cursor: pointer;
-}
-.displayCar .cars .add_to_cart:hover {
-  background-color: #15b097;
-  transition: all 0.5s;
-  border: 1px solid black;
-  transform: translateX(-1em);
-}
-.displayCar .cars .add_to_cart .disableButton {
-  background-color: transparent;
-  border: none;
   cursor: pointer;
 }
 
